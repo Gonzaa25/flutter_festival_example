@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_example/home/cubit/data_cubit.dart';
-import 'package:freezed_example/main.dart';
+import 'package:freezed_example/home/widgets/data_content.dart';
 
 /// HomeBody
 class HomeBody extends StatelessWidget {
@@ -22,23 +22,8 @@ class HomeBody extends StatelessWidget {
               child: CircularProgressIndicator(),
             ),
             loaded: (data) => data != null
-                ? Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '${data.title}',
-                          style: const TextStyle(fontSize: 25),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          '${data.subtitle} '
-                          'running in "${dio.options.baseUrl}"',
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                ? DataContent(
+                    data: data,
                   )
                 : const Center(
                     child: Text('No data found.'),
