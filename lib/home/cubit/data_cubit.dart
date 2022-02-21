@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:freezed_example/app/models/data/data.dart';
-import 'package:freezed_example/services/backend_service.dart';
+import 'package:freezed_example/app/services/backend_service.dart';
 
 part 'data_cubit.freezed.dart';
 part 'data_state.dart';
