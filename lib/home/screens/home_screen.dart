@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cat facts'),
+        title: const Text('Example app'),
       ),
       body: const HomeBody(),
       floatingActionButton: FloatingActionButton(
