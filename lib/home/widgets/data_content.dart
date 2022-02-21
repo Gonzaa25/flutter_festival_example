@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:freezed_example/app/constants.dart';
 import 'package:freezed_example/app/models/data/data.dart';
-import 'package:freezed_example/main.dart' show dio;
 
 /// Shows all the data.
 class DataContent extends StatelessWidget {
@@ -26,7 +26,7 @@ class DataContent extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             '${data.subtitle} '
-            'running in "${dio.options.baseUrl}"',
+            'running in "$baseUrl"',
             textAlign: TextAlign.center,
           ),
         ],
