@@ -18,7 +18,7 @@ class App extends StatelessWidget {
     /// dio instance.
     final dio = Dio(
       BaseOptions(
-        baseUrl: baseUrl,
+        baseUrl: baseUrlForEmulator,
       ),
     );
 
