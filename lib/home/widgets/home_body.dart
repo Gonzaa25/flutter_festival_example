@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_example/home/cubit/data_cubit.dart';
@@ -15,8 +16,12 @@ class HomeBody extends StatelessWidget {
       child: BlocBuilder<DataCubit, DataState>(
         builder: (context, state) {
           return state.when(
-            initial: () => const Center(
-              child: Text('Nothing to show.'),
+            initial: () => Center(
+              child: Text(
+                'Nothing to show.',
+                style: Theme.of(context).textTheme.headline6,
+                textAlign: TextAlign.center,
+              ),
             ),
             loading: () => const Center(
               child: CircularProgressIndicator(),
@@ -25,12 +30,18 @@ class HomeBody extends StatelessWidget {
                 ? DataContent(
                     data: data,
                   )
-                : const Center(
-                    child: Text('No data found.'),
+                : Center(
+                    child: Text(
+                      'No data found.',
+                      style: Theme.of(context).textTheme.headline6,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
             error: (Object error) => Center(
               child: Text(
-                error.toString(),
+                error is DioError ? error.message : error.toString(),
+                style: Theme.of(context).textTheme.headline6,
+                textAlign: TextAlign.center,
               ),
             ),
           );

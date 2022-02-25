@@ -14,7 +14,6 @@ class DataCubit extends Cubit<DataState> {
 
   /// Fetch all the data and send the response in a loaded state.
   Future getData() async {
-    if (state is _Loaded) return;
     emit(const DataState.loading());
     try {
       final data = await _service.getInfo();
@@ -26,7 +25,6 @@ class DataCubit extends Cubit<DataState> {
 
   /// Throws an Exception
   Future getException() async {
-    if (state is _Loaded) return;
     emit(const DataState.loading());
     try {
       throw Exception('An error has ocurred.');
