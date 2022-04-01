@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_example/home/constants/home_ui_constants.dart';
 import 'package:freezed_example/home/cubit/data_cubit.dart';
 import 'package:freezed_example/home/widgets/home_body.dart';
 
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Example app'),
+        title: const Text(HomeUiConstants.appName),
       ),
       body: const HomeBody(),
       floatingActionButton: FloatingActionButton(

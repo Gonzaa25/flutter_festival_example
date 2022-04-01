@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_example/home/constants/home_ui_constants.dart';
 import 'package:freezed_example/home/cubit/data_cubit.dart';
 import 'package:freezed_example/home/widgets/data_content.dart';
 
@@ -18,7 +19,7 @@ class HomeBody extends StatelessWidget {
           return state.when(
             initial: () => Center(
               child: Text(
-                'Nothing to show.',
+                HomeUiConstants.nothingToShow,
                 style: Theme.of(context).textTheme.headline6,
                 textAlign: TextAlign.center,
               ),
@@ -26,17 +27,20 @@ class HomeBody extends StatelessWidget {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            loaded: (data) => data != null
-                ? DataContent(
-                    data: data,
-                  )
-                : Center(
-                    child: Text(
-                      'No data found.',
-                      style: Theme.of(context).textTheme.headline6,
-                      textAlign: TextAlign.center,
-                    ),
+            loaded: (data) {
+              if (data == null) {
+                return Center(
+                  child: Text(
+                    HomeUiConstants.noDataFound,
+                    style: Theme.of(context).textTheme.headline6,
+                    textAlign: TextAlign.center,
                   ),
+                );
+              }
+              return DataContent(
+                data: data,
+              );
+            },
             error: (Object error) => Center(
               child: Text(
                 error is DioError ? error.message : error.toString(),
