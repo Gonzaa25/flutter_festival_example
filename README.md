@@ -1,4 +1,4 @@
-# freezed_example
+# flutter_festival_example
 
 A new Flutter project.
 
