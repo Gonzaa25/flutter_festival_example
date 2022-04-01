@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:freezed_example/app/models/data/data.dart';
+import 'package:freezed_example/app/models/data.dart';
 
 /// This is the backend service.
 class BackendService {

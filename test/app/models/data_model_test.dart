@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:freezed_example/app/models/data/data.dart';
+import 'package:freezed_example/app/models/data.dart';
 
 void main() {
   final data = Data(title: 'title', subtitle: 'subtitle');
@@ -8,7 +8,7 @@ void main() {
       expect(data, Data(title: 'title', subtitle: 'subtitle'));
     });
     test('copyWith', () {
-      expect(data.copyWith(), Data(title: 'title', subtitle: 'subtitle'));
+      expect(data.copyWith(), data);
     });
 
     test('toString', () {

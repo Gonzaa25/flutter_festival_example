@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:freezed_example/app/models/data/data.dart';
+import 'package:freezed_example/app/models/data.dart';
 import 'package:freezed_example/app/services/backend_service.dart';
 import 'package:freezed_example/home/cubit/data_cubit.dart';
 import 'package:freezed_example/home/screens/home_screen.dart';
@@ -41,12 +41,12 @@ void main() {
         );
   });
 
-  testWidgets('description', (tester) async {
+  testWidgets('should show a HomeBody', (tester) async {
     await tester.pumpWidget(homeScreen);
     expect(find.byType(HomeBody), findsOneWidget);
   });
 
-  testWidgets('description', (tester) async {
+  testWidgets('should show a DataContent', (tester) async {
     await tester.pumpWidget(homeScreen);
     final button = find.byIcon(Icons.download);
     await tester.tap(button);

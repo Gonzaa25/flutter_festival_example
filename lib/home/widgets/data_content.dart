@@ -1,7 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:freezed_example/app/models/data/data.dart';
-import 'package:get_it/get_it.dart';
+import 'package:freezed_example/app/models/data.dart';
 
 /// Shows all the data.
 class DataContent extends StatelessWidget {
@@ -15,7 +13,6 @@ class DataContent extends StatelessWidget {
   final Data data;
   @override
   Widget build(BuildContext context) {
-    final dio = GetIt.instance.get<Dio>();
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,8 +26,7 @@ class DataContent extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            '${data.subtitle}'
-            'running on ${dio.options.baseUrl}',
+            '${data.subtitle}',
             style: Theme.of(context).textTheme.subtitle1,
             textAlign: TextAlign.center,
           ),
