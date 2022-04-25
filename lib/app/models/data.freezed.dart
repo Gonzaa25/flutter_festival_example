@@ -22,7 +22,7 @@ Data _$DataFromJson(Map<String, dynamic> json) {
 class _$DataTearOff {
   const _$DataTearOff();
 
-  _Data call({String? title, String? subtitle}) {
+  _Data call({required String title, required String subtitle}) {
     return _Data(
       title: title,
       subtitle: subtitle,
@@ -39,8 +39,8 @@ const $Data = _$DataTearOff();
 
 /// @nodoc
 mixin _$Data {
-  String? get title => throw _privateConstructorUsedError;
-  String? get subtitle => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get subtitle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,7 +51,7 @@ mixin _$Data {
 abstract class $DataCopyWith<$Res> {
   factory $DataCopyWith(Data value, $Res Function(Data) then) =
       _$DataCopyWithImpl<$Res>;
-  $Res call({String? title, String? subtitle});
+  $Res call({String title, String subtitle});
 }
 
 /// @nodoc
@@ -71,11 +71,11 @@ class _$DataCopyWithImpl<$Res> implements $DataCopyWith<$Res> {
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -85,7 +85,7 @@ abstract class _$DataCopyWith<$Res> implements $DataCopyWith<$Res> {
   factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
       __$DataCopyWithImpl<$Res>;
   @override
-  $Res call({String? title, String? subtitle});
+  $Res call({String title, String subtitle});
 }
 
 /// @nodoc
@@ -106,11 +106,11 @@ class __$DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -118,14 +118,14 @@ class __$DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Data implements _Data {
-  _$_Data({this.title, this.subtitle});
+  _$_Data({required this.title, required this.subtitle});
 
   factory _$_Data.fromJson(Map<String, dynamic> json) => _$$_DataFromJson(json);
 
   @override
-  final String? title;
+  final String title;
   @override
-  final String? subtitle;
+  final String subtitle;
 
   @override
   String toString() {
@@ -159,14 +159,14 @@ class _$_Data implements _Data {
 }
 
 abstract class _Data implements Data {
-  factory _Data({String? title, String? subtitle}) = _$_Data;
+  factory _Data({required String title, required String subtitle}) = _$_Data;
 
   factory _Data.fromJson(Map<String, dynamic> json) = _$_Data.fromJson;
 
   @override
-  String? get title;
+  String get title;
   @override
-  String? get subtitle;
+  String get subtitle;
   @override
   @JsonKey(ignore: true)
   _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;

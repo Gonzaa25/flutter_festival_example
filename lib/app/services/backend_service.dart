@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:freezed_example/app/constants.dart';
 import 'package:freezed_example/app/models/data.dart';
 
 /// This is the backend service.
@@ -12,7 +13,7 @@ class BackendService {
   /// Fetch data from the backend.
   Future<Data?> getInfo() async {
     final response = await dio.get<Map<String, dynamic>>(
-      '/lib/data/info.json',
+      infoPath,
       options: Options(
         responseType: ResponseType.json,
       ),
