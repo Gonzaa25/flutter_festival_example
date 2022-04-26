@@ -18,8 +18,9 @@ class BackendService {
         responseType: ResponseType.json,
       ),
     );
-    if (response.statusCode == 200 && response.data != null) {
-      return Data.fromJson(response.data!);
+    final data = response.data;
+    if (response.statusCode == 200 && data != null) {
+      return Data.fromJson(data);
     }
     return null;
   }
