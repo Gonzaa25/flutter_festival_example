@@ -18,7 +18,7 @@ class DataContent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '${data.title}',
+            data.title,
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   fontSize: 25,
                 ),
@@ -26,7 +26,7 @@ class DataContent extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            '${data.subtitle}',
+            data.subtitle,
             style: Theme.of(context).textTheme.subtitle1,
             textAlign: TextAlign.center,
           ),
